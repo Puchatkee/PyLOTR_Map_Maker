@@ -1,7 +1,7 @@
 import pygame
 import sys
 
-SCALE = 4
+SCALE = 3
 PAN_STEP = 50
 OUTPUT_FILE = "waypoints.txt"
 
