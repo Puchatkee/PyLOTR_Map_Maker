@@ -2,7 +2,7 @@ import pygame
 import sys
 
 SCALE = 4
-PAN_STEP = 50
+CAMERA_SPEED = 50
 OUTPUT_FILE = "waypoints.txt"
 
 class Waypoint:
@@ -112,13 +112,13 @@ def main():
 
         keys = pygame.key.get_pressed()
         if keys[pygame.K_LEFT]:
-            offset_x = max(offset_x - PAN_STEP, 0)
+            offset_x = max(offset_x - CAMERA_SPEED, 0)
         if keys[pygame.K_RIGHT]:
-            offset_x = min(offset_x + PAN_STEP, map_width - screen_width)
+            offset_x = min(offset_x + CAMERA_SPEED, map_width - screen_width)
         if keys[pygame.K_UP]:
-            offset_y = max(offset_y - PAN_STEP, 0)
+            offset_y = max(offset_y - CAMERA_SPEED, 0)
         if keys[pygame.K_DOWN]:
-            offset_y = min(offset_y + PAN_STEP, map_height - screen_height)
+            offset_y = min(offset_y + CAMERA_SPEED, map_height - screen_height)
 
         clock.tick(30)
 
